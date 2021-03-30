@@ -33,7 +33,6 @@ namespace AmandaStore.Domain.Contexto
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             optionsBuilder.EnableSensitiveDataLogging();
             var builder = new ConfigurationBuilder();
             builder.AddJsonFile("appsettings.json", optional: false);
@@ -41,8 +40,6 @@ namespace AmandaStore.Domain.Contexto
 
             string connectionString = configuration.GetConnectionString("AmandaStoreDB");
             optionsBuilder.UseSqlServer(connectionString);
-            
-
         }
 
 

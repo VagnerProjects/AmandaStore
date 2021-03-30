@@ -18,6 +18,5 @@ namespace AmandaStore.Domain.Entitys
             TipoCartao = tipoCartao;
         }
 
-
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AmandaStore.Domain.Repositorios.Interfaces
 {
-    public interface IProdutoRepository: IRepository<Produto>
+    public interface IRepositoryProduto: IRepository<Produto>
     {
         void AdicionarProduto(Produto produto);
     }

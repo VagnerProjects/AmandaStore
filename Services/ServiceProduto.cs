@@ -16,9 +16,9 @@ namespace AmandaStore.Services
 {
     public class ServiceProduto : Repository<Produto>, IServiceProduto
     {
-        private readonly IProdutoRepository _repositoryProduto;
+        private readonly IRepositoryProduto _repositoryProduto;
 
-        public ServiceProduto(IProdutoRepository repositoryProduto)
+        public ServiceProduto(IRepositoryProduto repositoryProduto)
         {
             _repositoryProduto = repositoryProduto;
         }

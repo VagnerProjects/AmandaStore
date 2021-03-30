@@ -7,7 +7,7 @@ using AmandaStore.Domain.Entitys;
 
 namespace AmandaStore.Domain.Repositorios
 {
-    public class RepositorioProduto : Repository<Produto>, IProdutoRepository
+    public class RepositorioProduto : Repository<Produto>, IRepositoryProduto
     {
         public void AdicionarProduto(Produto produto)
         {

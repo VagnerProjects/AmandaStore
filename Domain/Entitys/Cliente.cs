@@ -33,22 +33,9 @@ namespace AmandaStore.Domain.Entitys
             EnderecoCliente = enderecoCliente;
         }
 
-        public string SetProdutoPreferido(string produto)
-        {
-            return ProdutoPreferido = produto;
-        }
-
-        public int SetTipoCliente(int clienteTipo)
-        {
-            return TipoCliente = clienteTipo;
-        }
-        public string SetCPF(string cpf)
-        {
-            return CPF = cpf;
-        }
-        public Endereco SetEndereco(Endereco endereco)
-        {
-            return EnderecoCliente = endereco;
-        }
+        public void SetProdutoPreferido(string produto) => ProdutoPreferido = produto;
+        public void SetTipoCliente(int clienteTipo) => TipoCliente = clienteTipo;
+        public void SetCPF(string cpf) => CPF = cpf;
+        public void SetEndereco(Endereco endereco) => EnderecoCliente = endereco;
     }
 }

@@ -34,48 +34,14 @@ namespace AmandaStore.Domain.Entitys
             Tipo = tipo;
         }
 
-        public string SetMaterial(string material)
-        {
-            return Material = material;
-        }
-
-        public double SetPeso(double peso)
-        {
-            return Peso = peso;
-        }
-
-        public double SetComprimento(double comprimento)
-        {
-            return Comprimento = comprimento;
-        }
-
-        public double SetLargura(double largura)
-        {
-            return Largura = largura;
-        }
-
-        public double SetAltura(double altura)
-        {
-            return Altura = altura;
-        }
-
-        public string SetCor(string cor)
-        {
-            return Cor = cor;
-        }
-
-        public string SetDetalhes(string detalhes)
-        {
-            return Detalhes = detalhes;
-        }
-
-        public string SetAvisosInstrucoes(string avisos)
-        {
-            return AvisosInstrucoes = avisos;
-        }
-        public int SetTipo(int tipo)
-        {
-            return Tipo = tipo;
-        }
+        public void SetMaterial(string material) => Material = material;
+        public void SetPeso(double peso) => Peso = peso;
+        public void SetComprimento(double comprimento) => Comprimento = comprimento;
+        public void SetLargura(double largura) => Largura = largura;
+        public void SetAltura(double altura) => Altura = altura;
+        public void SetCor(string cor) => Cor = cor;
+        public void SetDetalhes(string detalhes) => Detalhes = detalhes;
+        public void SetAvisosInstrucoes(string avisos) => AvisosInstrucoes = avisos;
+        public void SetTipo(int tipo) => Tipo = tipo;
     }
 }

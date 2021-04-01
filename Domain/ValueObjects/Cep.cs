@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AmandaStore.Domain.ValueObjects
@@ -8,49 +10,42 @@ namespace AmandaStore.Domain.ValueObjects
     public class Cep
     {
         public const int Maxlength = 10;
-        private string numero;
+        private string Numero;
 
         protected Cep() { }
 
-        public Cep(string pCep, bool autoGe = false)
+        public Cep(string pCep)
         {
-            if (autoGe)
-            {
-                numero = pCep;
-            }
-            else
-            {
-                setCep(pCep);
-            }
+            Numero = pCep;
         }
 
-        public void setCep(string cepNumero)
+        public void SetCep(string cepNumero)
         {
             ///COMENTADO TEMPORARIAMENTE, ENTENDER O PQ RETORNA CEP INVALIDO
-            numero = cepNumero.Trim().Replace("-", "");
+            Numero = cepNumero.Trim().Replace("-", "");
 
 
-            //if (!string.IsNullOrEmpty(cepNumero))
-            //{
-            //    Guard.validaSize(cepNumero, Maxlength);
+            if (!string.IsNullOrEmpty(cepNumero))
+            {
+                //Guard.validaSize(cepNumero, Maxlength);
 
-            //    Regex regex = new Regex(@"^\d{5}-\d{3}$");
-            //    Match match = regex.Match(cepNumero);
+                var regex = new Regex(@"^\d{5}-\d{3}$");
+                var match = regex.Match(cepNumero);
 
-            //    if (match.Success)
-            //        numero = cepNumero.Trim().Replace("-", "");
-            //    else
-            //        throw new Exception("CEP inválido");
-            //}
+                if (match.Success)
+                    Numero = cepNumero.Trim().Replace("-", "");
+                else
+                    throw new Exception("CEP inválido");
+            }
         }
 
-        public string getCep()
+        public string GetCep()
         {
             int count = 0;
             string maskCep = "";
-            if (!string.IsNullOrEmpty(numero))
+            if (!string.IsNullOrEmpty(Numero))
             {
-                foreach (var item in numero)
+                foreach (var item in Numero)
                 {
                     if (count == 5)
                         maskCep += "-";
@@ -62,10 +57,10 @@ namespace AmandaStore.Domain.ValueObjects
                 return maskCep;
             }
 
-            return numero;
+            return Numero;
         }
 
-        public static string getMaskCep(string cep)
+        public static string GetMaskCep(string cep)
         {
             int count = 0;
             string maskCep = "";
@@ -86,3 +81,4 @@ namespace AmandaStore.Domain.ValueObjects
         }
     }
 }
+

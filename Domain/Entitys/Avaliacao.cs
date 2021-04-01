@@ -16,9 +16,6 @@ namespace AmandaStore.Domain.Entitys
             Estrelas = estrelas;
         }
 
-        public int SetEstrelas(int estrelas)
-        {
-            return Estrelas = estrelas;
-        }
+        public void SetEstrelas(int estrelas) => Estrelas = estrelas;
     }
 }

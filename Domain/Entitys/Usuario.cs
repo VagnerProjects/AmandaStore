@@ -33,34 +33,11 @@ namespace AmandaStore.Domain.Entitys
             
         }
 
-        public string SetNome(string nome)
-        {
-            return Nome = nome;
-        }
-        public int SetIdade(int idade)
-        {
-            return Idade = idade;
-        }
-
-        public DateTime? SetDataNascimento(DateTime? data)
-        {
-            return DataNascimento = data;
-        }
-
-        public string SetTelefone(string telefone)
-        {
-            return Telefone = telefone;
-        }
-
-        public string SetCelular(string celular)
-        {
-            return Celular = celular;
-        }
-
-        public int SetTipoUsuario(int tipoUsuario)
-        {
-            return TipoUsuario = tipoUsuario;
-        }
-
+        public void SetNome(string nome) => Nome = nome;
+        public void SetIdade(int idade) => Idade = idade;
+        public void SetDataNascimento(DateTime? data) => DataNascimento = data;
+        public void SetTelefone(string telefone) => Telefone = telefone;
+        public void SetCelular(string celular) => Celular = celular;
+        public void SetTipoUsuario(int tipoUsuario) => TipoUsuario = tipoUsuario;
     }
 }

@@ -30,7 +30,7 @@ namespace AmandaStore.Domain.ValueObjects
         //    return Criptograph.Decrypt(Password);
         //}
 
-        public void setPassword(string pass)
+        public void SetPassword(string pass)
         {
             ValidaSizePassword(pass, MaxLength, MinLength);
 

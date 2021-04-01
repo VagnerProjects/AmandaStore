@@ -37,59 +37,16 @@ namespace AmandaStore.Domain.Entitys
             AvisosInstrucoes = avisos;
         }
 
-        public int SetCor(int cor)
-        {
-            return Cor = cor;
-        }
-
-        public string SetMaterial(string material)
-        {
-            return Material = material;
-        }
-
-        public string SetTextura(string textura)
-        {
-            return Textura = textura;
-        }
-        public double SetPeso(double peso)
-        {
-            return PesoLiquido = peso;
-        }
-
-        public double SetComprimento(double comprimento)
-        {
-            return Comprimento = comprimento;
-        }
-        public double SetLargura(double largura)
-        {
-            return Largura = largura;
-        }
-
-        public double SetAltura(double altura)
-        {
-            return Altura = altura;
-        }
-
-        public string SetBeneficios(string beneficios)
-        {
-            return Beneficios = beneficios;
-        }
-
-        public int SetTipo(int tipo)
-        {
-            return TipoMaquiagem = tipo;
-        }
-
-        public string SetMarca(string marca)
-        {
-            return Marca = marca;
-        }
-
-
-        public string SetAvisosInstrucoes(string avisos)
-        {
-            return AvisosInstrucoes = avisos;
-        }
-
+        public void SetCor(int cor) => Cor = cor;
+        public void SetMaterial(string material) => Material = material;
+        public void SetTextura(string textura) => Textura = textura;
+        public void SetPeso(double peso) => PesoLiquido = peso;
+        public void SetComprimento(double comprimento) => Comprimento = comprimento;
+        public void SetLargura(double largura) => Largura = largura;
+        public void SetAltura(double altura) => Altura = altura;
+        public void SetBeneficios(string beneficios) => Beneficios = beneficios;
+        public void SetTipo(int tipo) => TipoMaquiagem = tipo;
+        public void SetMarca(string marca) => Marca = marca;
+        public void SetAvisosInstrucoes(string avisos) => AvisosInstrucoes = avisos;
     }
 }

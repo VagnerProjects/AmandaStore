@@ -19,10 +19,6 @@ namespace AmandaStore.Domain.Entitys
             Descricao = descricao;
         }
 
-        public string SetComentario(string comentario)
-        {
-            return Descricao = comentario;
-        }
-            
+        public void SetComentario(string comentario) => Descricao = comentario;
     }
 }

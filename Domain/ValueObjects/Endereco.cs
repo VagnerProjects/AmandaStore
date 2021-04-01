@@ -26,60 +26,13 @@ namespace AmandaStore.Domain.ValueObjects
             Estado = estado;
         }
 
-        public string SetLogradouro(string logradouro)
-        {
-            if (!String.IsNullOrEmpty(logradouro))
-                return Logradouro = logradouro.Trim().ToUpper();
-
-            return "";
-        }
-
-        public string SetComplemento(string complemento)
-        {
-            if (!String.IsNullOrEmpty(complemento))
-                return Complemento = complemento.Trim().ToUpper();
-
-            return "";
-        }
-
-        public string SetNumero(string numero)
-        {
-            if (!String.IsNullOrEmpty(numero))
-                return Numero = numero.Trim().ToUpper();
-
-            return "";
-        }
-        public string SetCep(string cep)
-        {
-            if (!String.IsNullOrEmpty(cep))
-                return CepEndereco = new Cep(cep).getCep().Trim().ToUpper();
-
-            return "";
-        }
-
-        public string SetBairro(string bairro)
-        {
-            if (!String.IsNullOrEmpty(bairro))
-                return Bairro = bairro.Trim().ToUpper();
-
-            return "";
-        }
-
-        public string SetCidade(string cidade)
-        {
-            if (!String.IsNullOrEmpty(cidade))
-                return Cidade = cidade.Trim().ToUpper();
-
-            return "";
-        }
-
-        public string SetEstado(string estado)
-        {
-            if (!String.IsNullOrEmpty(estado))
-                return Estado = estado.Trim().ToUpper();
-
-            return "";
-        }
+        public void SetLogradouro(string logradouro) => Logradouro = logradouro;
+        public void SetComplemento(string complemento) => Complemento = complemento;
+        public void SetNumero(string numero) => Numero = numero;
+        public void SetCep(string cep) => CepEndereco = cep;
+        public void SetBairro(string bairro) => Bairro = bairro;
+        public void SetCidade(string cidade) => Cidade = cidade;
+        public void SetEstado(string estado) => Estado = estado;
 
         public override bool Equals(object obj)
         {

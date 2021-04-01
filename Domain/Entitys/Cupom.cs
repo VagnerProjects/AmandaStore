@@ -20,14 +20,7 @@ namespace AmandaStore.Domain.Entitys
             Preenchimento = preenchimento;
         }
 
-        public int SetDesconto(int desconto)
-        {
-            return Desconto = desconto;
-        }
-
-        public string SetPreenchimento(string preenchimento)
-        {
-            return Preenchimento = preenchimento;
-        }
+        public void SetDesconto(int desconto) => Desconto = desconto;
+        public void SetPreenchimento(string preenchimento) => Preenchimento = preenchimento;
     }
 }

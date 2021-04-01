@@ -48,47 +48,14 @@ namespace AmandaStore.Domain.Entitys
             Unidade = unidade;
         }
 
-        public string SetDescricao(string descricao)
-        {
-            return Descricao = descricao;
-        }
-        public string SetNome(string nome)
-        {
-            return Nome = nome;
-        }
-        public double SetValor(double valor)
-        {
-            return Valor = valor;
-        }
-
-        public int SetQuantidadeEstoque(int quantidade)
-        {
-            return QuantidadeEstoque = quantidade;
-        }
-
-        public int SetTipoProduto(int tipo)
-        {
-            return TipoProduto = tipo;
-        }
-
-        public int SetSubTipoProduto(int subTipo)
-        {
-            return SubTipoProduto = subTipo;
-        }
-
-        public string SetCodigo(string codigo)
-        {
-            return Codigo = codigo;
-        }
-
-        public double SetCusto(double custo)
-        {
-            return Custo = custo;
-        }
-
-        public string SetUnidade(string unidade)
-        {
-            return Unidade = unidade;
-        }
+        public void SetDescricao(string descricao) => Descricao = descricao;
+        public string SetNome(string nome) => Nome = nome;
+        public double SetValor(double valor) => Valor = valor;
+        public int SetQuantidadeEstoque(int quantidade) => QuantidadeEstoque = quantidade;
+        public int SetTipoProduto(int tipo) => TipoProduto = tipo;
+        public int SetSubTipoProduto(int subTipo) => SubTipoProduto = subTipo;
+        public string SetCodigo(string codigo) => Codigo = codigo;
+        public string SetUnidade(string unidade) => Unidade = unidade;
+      
     }
 }

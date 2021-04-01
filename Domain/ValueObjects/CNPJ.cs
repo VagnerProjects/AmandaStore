@@ -9,29 +9,22 @@ namespace AmandaStore.Domain.ValueObjects
     public class CNPJ
     {
         private const int Maxlength = 18;
-        public string _numero { get; private set; }
+        public string Numero { get; private set; }
 
         protected CNPJ() { }
 
-        public CNPJ(string pCnpj, bool autoGe = false)
+        public CNPJ(string pCnpj)
         {
-            if (autoGe)
-            {
-                string nCnpj = pCnpj.Replace(".", "").Replace("/", "").Replace("-", "");
-                _numero = nCnpj;
-            }
-            else
-            {
-                setNumero(pCnpj);
-            }
+            var nCnpj = pCnpj.Replace(".", "").Replace("/", "").Replace("-", "");
+            Numero = nCnpj;
         }
 
-        private void setNumero(string cnpjStr)
+        public void SetNumero(string cnpjStr)
         {
 
             if (!string.IsNullOrEmpty(cnpjStr))
             {
-                Regex regex = new Regex(@"(^(\d{2}.\d{3}.\d{3}/\d{4}.\d{2})|(\d{14})$)");
+                var regex = new Regex(@"(^(\d{2}.\d{3}.\d{3}/\d{4}.\d{2})|(\d{14})$)");
 
                 var match = regex.Match(cnpjStr);
 
@@ -39,7 +32,7 @@ namespace AmandaStore.Domain.ValueObjects
                 {
                     string nCnpj = cnpjStr.Replace(".", "").Replace("/", "").Replace("-", "");
                     if (IsCnpj(nCnpj))
-                        _numero = nCnpj;
+                        Numero = nCnpj;
                     else
                         throw new Exception("Número de CNPJ inválido");
                 }
@@ -54,13 +47,13 @@ namespace AmandaStore.Domain.ValueObjects
             }
         }
 
-        public string getCnpj()
+        public string GetCnpj()
         {
             int count = 0;
             string maskCnpj = "";
-            if (!string.IsNullOrEmpty(_numero))
+            if (!string.IsNullOrEmpty(Numero))
             {
-                foreach (var item in _numero)
+                foreach (var item in Numero)
                 {
                     if (count == 2)
                         maskCnpj += ".";
@@ -83,41 +76,54 @@ namespace AmandaStore.Domain.ValueObjects
                 return maskCnpj;
             }
 
-            return _numero;
+            return Numero;
         }
 
         private static bool IsCnpj(string cnpj)
         {
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+
             int soma;
             int resto;
             string digito;
             string tempCnpj;
+
             cnpj = cnpj.Trim();
             cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
+
             if (cnpj.Length != 14)
                 return false;
+
             tempCnpj = cnpj.Substring(0, 12);
             soma = 0;
+
             for (int i = 0; i < 12; i++)
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
+
             resto = (soma % 11);
+
             if (resto < 2)
                 resto = 0;
             else
                 resto = 11 - resto;
+
             digito = resto.ToString();
             tempCnpj = tempCnpj + digito;
             soma = 0;
+
             for (int i = 0; i < 13; i++)
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
+
             resto = (soma % 11);
+
             if (resto < 2)
                 resto = 0;
             else
                 resto = 11 - resto;
+
             digito = digito + resto.ToString();
+
             return cnpj.EndsWith(digito);
         }
     }

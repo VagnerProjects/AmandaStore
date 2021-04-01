@@ -25,27 +25,9 @@ namespace AmandaStore.Domain.Entitys
             TipoDeRoupa = tipodeRoupa;
         }
 
-        public string SetCor(string cor)
-        {
-            return Cor = cor;
-        }
-
-        public string SetMaterial(string material)
-        {
-            return Material = material;
-        }
-        public int SetPorcentagemDoMaterial(int porcentagemDoMaterial)
-        {
-            return PorcentagemDoMaterial = porcentagemDoMaterial;
-        }
-        public string SetAvisoInstrucao (string avisoInstrucao)
-        {
-            return AvisoInstrucao = avisoInstrucao;
-        }
-        public int SetTipoDeRoupa (int tipoDeRoupa)
-        {
-            return TipoDeRoupa = tipoDeRoupa;
-
-        }
+        public void SetCor(string cor) => Cor = cor;
+        public void SetMaterial(string material) => Material = material;
+        public void SetPorcentagemDoMaterial(int porcentagemDoMaterial) => PorcentagemDoMaterial = porcentagemDoMaterial;
+        public void SetAvisoInstrucao(string avisoInstrucao) => AvisoInstrucao = avisoInstrucao;
     }
 }

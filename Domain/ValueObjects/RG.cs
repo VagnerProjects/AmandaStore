@@ -27,30 +27,13 @@ namespace AmandaStore.Domain.ValueObjects
             DataDeEmissao = dataDeEmissao;
         }
 
-        public void SetOrgaoEmissor(string orgao)
-        {
-            if (!string.IsNullOrEmpty(orgao))
-                this.OrgaoEmissor = orgao;
-        }
+        public void SetOrgaoEmissor(string orgao) => OrgaoEmissor = orgao;
 
-        public void SetPaisEmissor(string emissor)
-        {
-            if (!string.IsNullOrEmpty(emissor))
-                this.PaisEmissor = emissor;
-        }
+        public void SetPaisEmissor(string paisEmissor) => PaisEmissor = paisEmissor;
 
-        public void SetDataDeEmissao(DateTime? data)
-        {
-            this.DataDeEmissao = data;
-        }
+        public void SetDataDeEmissao(DateTime? data) => DataDeEmissao = data;
 
-        public void SetNumero(string numeracao)
-        {
-            if (!string.IsNullOrEmpty(numeracao))
-                this.Numero = numeracao;
-            else
-                this.Numero = "";
-        }
+        public void SetNumero(string numeracao) => Numero = numeracao;
 
         /// <summary>
         /// Exibe data formatada na saída do método

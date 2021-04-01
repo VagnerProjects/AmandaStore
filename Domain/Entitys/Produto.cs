@@ -19,17 +19,25 @@ namespace AmandaStore.Domain.Entitys
         public int SubTipoProduto { get; set; }
         public virtual ICollection<Transacao> TransacaoProduto { get; set; }
         public virtual ICollection<ProdutoCategoria> CategoriaProduto {get;set;}
-        public virtual ICollection<Avaliacao> ProdutoAvaliacao { get; set; }
-
+        public virtual ICollection<Avaliacao> ProdutoAvaliacao { get; set; }      
+        public virtual ICollection<Roupas> Roupas { get; set; } 
+        public virtual ICollection<Cupom> Cupom { get; set; }
+        public virtual ICollection<Acessorios> Acessorios { get; set; }
+        public virtual ICollection<Maquiagem> Maquiagem { get; set; }
         public Produto() { }
 
         public Produto(string nome, string descricao, double valor, int quantidadeEstoque,
                       int tipoProduto, int subTipoProduto, string codigo, double custo, string unidade)
         {
             Descricao = descricao;
+ 
             ProdutoAvaliacao = new List<Avaliacao>();
             TransacaoProduto = new List<Transacao>();
             CategoriaProduto = new List<ProdutoCategoria>();
+            Cupom = new List<Cupom>();
+            Roupas = new List<Roupas>();
+            Acessorios = new List<Acessorios>();
+            Maquiagem = new List<Maquiagem>();
             Nome = nome;
             Valor = valor;
             QuantidadeEstoque = quantidadeEstoque;

@@ -35,7 +35,7 @@ namespace AmandaStore.Services
                 }
             }
 
-            return new ServerStatus("Teste",0);
+            return new ServerStatus() { Mensagem = "Teste", Status = 0 };
         }
     }
 }

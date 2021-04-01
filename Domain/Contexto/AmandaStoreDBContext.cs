@@ -30,10 +30,13 @@ namespace AmandaStore.Domain.Contexto
         public DbSet<Produto> Produto { get; set; }
         public DbSet<ProdutoCategoria> ProdutoCategoria { get; set; }
         public DbSet<Comentario> Comentario { get; set; }
+        public DbSet<Maquiagem> Maquiagem { get; set; }
+        public DbSet<Acessorios> Acessorios { get; set; }
+        public DbSet<Roupas> Roupas { get; set; }
+       public DbSet<Cupom> Cupom { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             optionsBuilder.EnableSensitiveDataLogging();
             var builder = new ConfigurationBuilder();
             builder.AddJsonFile("appsettings.json", optional: false);
@@ -41,8 +44,6 @@ namespace AmandaStore.Domain.Contexto
 
             string connectionString = configuration.GetConnectionString("AmandaStoreDB");
             optionsBuilder.UseSqlServer(connectionString);
-            
-
         }
 
 
@@ -53,6 +54,8 @@ namespace AmandaStore.Domain.Contexto
 
             modelBuilder.Entity<Usuario>().ToTable("Usuario");
             modelBuilder.Entity<Cliente>().ToTable("Cliente");
+            modelBuilder.Entity<Roupas>().ToTable("Roupas");
+            modelBuilder.Entity<Acessorios>().ToTable("Acessorios");
          
            
 

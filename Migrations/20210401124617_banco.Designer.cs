@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmandaStore.Migrations
 {
     [DbContext(typeof(AmandaStoreDBContext))]
-    [Migration("20210329160214_teste")]
-    partial class teste
+    [Migration("20210401124617_banco")]
+    partial class banco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,58 @@ namespace AmandaStore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Acessorios", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Altura")
+                        .HasColumnType("float");
+
+                    b.Property<string>("AvisosInstrucoes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Comprimento")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Cor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataDeAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataDeCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Detalhes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Largura")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("Lixeira")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Peso")
+                        .HasColumnType("float");
+
+                    b.Property<Guid?>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Acessorios");
+                });
 
             modelBuilder.Entity("AmandaStore.Domain.Entitys.Avaliacao", b =>
                 {
@@ -159,11 +211,106 @@ namespace AmandaStore.Migrations
                     b.ToTable("Comentario");
                 });
 
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Cupom", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataDeAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataDeCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Desconto")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lixeira")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Preenchimento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Cupom");
+                });
+
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Maquiagem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Altura")
+                        .HasColumnType("float");
+
+                    b.Property<string>("AvisosInstrucoes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Beneficios")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Comprimento")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Cor")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataDeAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataDeCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Largura")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("Lixeira")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Marca")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("PesoLiquido")
+                        .HasColumnType("float");
+
+                    b.Property<Guid?>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Textura")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TipoMaquiagem")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Maquiagem");
+                });
+
             modelBuilder.Entity("AmandaStore.Domain.Entitys.Produto", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Codigo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Custo")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("DataDeAlteracao")
                         .HasColumnType("datetime2");
@@ -177,9 +324,6 @@ namespace AmandaStore.Migrations
                     b.Property<bool>("Lixeira")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Material")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
@@ -191,6 +335,9 @@ namespace AmandaStore.Migrations
 
                     b.Property<int>("TipoProduto")
                         .HasColumnType("int");
+
+                    b.Property<string>("Unidade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Valor")
                         .HasColumnType("float");
@@ -231,6 +378,46 @@ namespace AmandaStore.Migrations
                     b.ToTable("ProdutoCategoria");
                 });
 
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Roupas", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AvisoInstrucao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataDeAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataDeCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Lixeira")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PorcentagemDoMaterial")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TipoDeRoupa")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Roupas");
+                });
+
             modelBuilder.Entity("AmandaStore.Domain.Entitys.Transacao", b =>
                 {
                     b.Property<Guid>("Id")
@@ -241,6 +428,9 @@ namespace AmandaStore.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("ClienteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CupomId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DataDeAlteracao")
@@ -266,6 +456,8 @@ namespace AmandaStore.Migrations
                     b.HasIndex("CartaoId");
 
                     b.HasIndex("ClienteId");
+
+                    b.HasIndex("CupomId");
 
                     b.HasIndex("ProdutoId");
 
@@ -311,6 +503,13 @@ namespace AmandaStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Acessorios", b =>
+                {
+                    b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
+                        .WithMany("Acessorios")
+                        .HasForeignKey("ProdutoId");
                 });
 
             modelBuilder.Entity("AmandaStore.Domain.Entitys.Avaliacao", b =>
@@ -421,10 +620,31 @@ namespace AmandaStore.Migrations
                         .HasForeignKey("ClienteId");
                 });
 
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Cupom", b =>
+                {
+                    b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
+                        .WithMany("Cupom")
+                        .HasForeignKey("ProdutoId");
+                });
+
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Maquiagem", b =>
+                {
+                    b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
+                        .WithMany("Maquiagem")
+                        .HasForeignKey("ProdutoId");
+                });
+
             modelBuilder.Entity("AmandaStore.Domain.Entitys.ProdutoCategoria", b =>
                 {
                     b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
                         .WithMany("CategoriaProduto")
+                        .HasForeignKey("ProdutoId");
+                });
+
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Roupas", b =>
+                {
+                    b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
+                        .WithMany("Roupas")
                         .HasForeignKey("ProdutoId");
                 });
 
@@ -437,6 +657,10 @@ namespace AmandaStore.Migrations
                     b.HasOne("AmandaStore.Domain.Entitys.Cliente", null)
                         .WithMany("TransacaoCliente")
                         .HasForeignKey("ClienteId");
+
+                    b.HasOne("AmandaStore.Domain.Entitys.Cupom", null)
+                        .WithMany("Transacao")
+                        .HasForeignKey("CupomId");
 
                     b.HasOne("AmandaStore.Domain.Entitys.Produto", null)
                         .WithMany("TransacaoProduto")
@@ -485,11 +709,24 @@ namespace AmandaStore.Migrations
                     b.Navigation("AvaliacaoComentario");
                 });
 
+            modelBuilder.Entity("AmandaStore.Domain.Entitys.Cupom", b =>
+                {
+                    b.Navigation("Transacao");
+                });
+
             modelBuilder.Entity("AmandaStore.Domain.Entitys.Produto", b =>
                 {
+                    b.Navigation("Acessorios");
+
                     b.Navigation("CategoriaProduto");
 
+                    b.Navigation("Cupom");
+
+                    b.Navigation("Maquiagem");
+
                     b.Navigation("ProdutoAvaliacao");
+
+                    b.Navigation("Roupas");
 
                     b.Navigation("TransacaoProduto");
                 });

@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AmandaStore.Domain.Repositorios;
+using AmandaStore.Domain.Repositorios.Interfaces;
+using AmandaStore.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +13,8 @@ namespace AmandaStore
     {
         public static void Dependencias(IServiceCollection services)
         {
-
+            services.AddScoped<IRepositoryProduto, RepositorioProduto>();
+            services.AddScoped<IServiceProduto, ServiceProduto>();
         }
     }
 }

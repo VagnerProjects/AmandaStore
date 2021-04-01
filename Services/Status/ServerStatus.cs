@@ -8,15 +8,8 @@ namespace AmandaStore.Services.Status
 {
     public class ServerStatus : IServerStatus
     {
+
+       public int Status { get; set; }
         public string Mensagem { get; set; }
-        public int StatusServer { get; set; }
-
-        public ServerStatus(string mensagem, int status)
-        {
-            Mensagem = mensagem;
-            StatusServer = status;
-        }
-
-        
     }
 }

@@ -11,7 +11,7 @@ namespace AmandaStore.Services.Excel
 {
     public class ImportarProdutos
     {
-        public List<Produto> _Extrator;
+        public List<Produto> _extratorProduto;
 
         public List<Produto> Extrair(IFormFile file)
         {
@@ -40,7 +40,7 @@ namespace AmandaStore.Services.Excel
 
             }
 
-            return _Extrator;
+            return _extratorProduto;
         }
     }
 }

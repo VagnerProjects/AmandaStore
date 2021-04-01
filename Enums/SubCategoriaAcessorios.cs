@@ -8,9 +8,10 @@ namespace AmandaStore.Enums
     public enum SubCategoriaAcessorios
     {
         BOLSAS = 1,
-        BIJUTERIA = 2,
+        JOIAS = 2,
         RELOGIO = 3,
         CINTOS = 4,
-        TIARAS = 5
+        TIARAS = 5,
+        OUTROS = 6
     }
 }

@@ -16,9 +16,9 @@ namespace AmandaStore.Services
 {
     public class ServiceProduto : Repository<Produto>, IServiceProduto
     {
-        private readonly IProdutoRepository _repositoryProduto;
+        private readonly IRepositoryProduto _repositoryProduto;
 
-        public ServiceProduto(IProdutoRepository repositoryProduto)
+        public ServiceProduto(IRepositoryProduto repositoryProduto)
         {
             _repositoryProduto = repositoryProduto;
         }
@@ -35,7 +35,7 @@ namespace AmandaStore.Services
                 }
             }
 
-            return new ServerStatus("Teste",0);
+            return new ServerStatus() { Mensagem = "Teste", Status = 0 };
         }
     }
 }

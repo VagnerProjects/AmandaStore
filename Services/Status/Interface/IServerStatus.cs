@@ -7,5 +7,7 @@ namespace AmandaStore.Services.Status.Interface
 {
     public interface IServerStatus
     {
+        int Status { get; set; }
+        string Mensagem { get; set; }
     }
 }

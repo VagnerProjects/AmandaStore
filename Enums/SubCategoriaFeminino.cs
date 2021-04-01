@@ -8,9 +8,12 @@ namespace AmandaStore.Enums
     public enum SubCategoriaFeminino
     {
         VESTIDOS = 1,
-        BLUSAS = 2,
-        CROPEED = 3,
-        SAIAS = 4,
-        CALÇAS = 5
+        TOP = 2,
+        PARTES_DE_BAIXO = 3,
+        CASACO_JAQUETA = 4,
+        CONJUNTOS = 5,
+        MACACAO = 6,
+        MODA_PRAIA = 7,
+        MOLETONS = 8
     }
 }

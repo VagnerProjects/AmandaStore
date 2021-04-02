@@ -2,6 +2,7 @@
 using AmandaStore.Domain.Repositorios;
 using AmandaStore.Domain.Repositorios.Interfaces;
 using AmandaStore.Model;
+using AmandaStore.Services.Serviços;
 using AmandaStore.Services.Status;
 using AmandaStore.Services.Status.Interface;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +15,11 @@ using System.Threading.Tasks;
 
 namespace AmandaStore.Services
 {
-    public class ServiceProduto : Repository<Produto>, IServiceProduto
+    public class ServiceProduto : Service<Produto>, IServiceProduto
     {
         private readonly IRepositoryProduto _repositoryProduto;
 
-        public ServiceProduto(IRepositoryProduto repositoryProduto)
+        public ServiceProduto(IRepositoryProduto repositoryProduto):base(repositoryProduto)
         {
             _repositoryProduto = repositoryProduto;
         }

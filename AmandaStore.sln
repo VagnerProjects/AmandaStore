@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmandaStore", "AmandaStore.csproj", "{247E8CBD-23F1-4A7D-9D7B-9E13A2CB0A1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentidadeAmandaStore", "..\IdentidadeAmandaStore\IdentidadeAmandaStore.csproj", "{40541669-AEB4-4BD9-BB58-AEF9EDA23C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentidadeAmandaStore", "..\IdentidadeAmandaStore\IdentidadeAmandaStore.csproj", "{40541669-AEB4-4BD9-BB58-AEF9EDA23C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{E798C741-2270-4164-B35A-AE3956CCEFA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Store", "Store", "{3D716795-72CE-40C5-B4AF-8F81E5A32A3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identidade", "Identidade", "{371D45ED-3328-4533-9F70-4D3F3B5BB4B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{247E8CBD-23F1-4A7D-9D7B-9E13A2CB0A1B} = {3D716795-72CE-40C5-B4AF-8F81E5A32A3E}
+		{40541669-AEB4-4BD9-BB58-AEF9EDA23C38} = {371D45ED-3328-4533-9F70-4D3F3B5BB4B1}
+		{3D716795-72CE-40C5-B4AF-8F81E5A32A3E} = {E798C741-2270-4164-B35A-AE3956CCEFA7}
+		{371D45ED-3328-4533-9F70-4D3F3B5BB4B1} = {E798C741-2270-4164-B35A-AE3956CCEFA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3AA53FF-D02D-4779-ABEB-9A583D4859EA}

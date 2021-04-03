@@ -31,6 +31,7 @@ namespace AmandaStore
         {
 
             services.AddControllers();
+
             services.AddDbContext<AmandaStoreDBContext>();
 
             SwaggerConfiguration.Configure(services);

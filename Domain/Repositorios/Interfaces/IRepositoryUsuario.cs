@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AmandaStore.Domain.Repositorios.Interfaces
 {
-    interface IRepositoryUsuario: IRepository<Usuario>
+    public interface IRepositoryUsuario: IRepository<Usuario>
     {
         void AdicionarUsuario(Usuario usuario);
     }

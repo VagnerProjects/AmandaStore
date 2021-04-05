@@ -1,5 +1,6 @@
 using AmandaStore.Domain.Contexto;
 using AmandaStore.Swagger;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,10 +31,10 @@ namespace AmandaStore
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
 
             services.AddDbContext<AmandaStoreDBContext>();
-
+            DependencyInjection.Dependencias(services);
             SwaggerConfiguration.Configure(services);
         }
 

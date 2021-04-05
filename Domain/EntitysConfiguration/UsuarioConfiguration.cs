@@ -12,7 +12,6 @@ namespace AmandaStore.Domain.Entitys
         public void Configure(EntityTypeBuilder<Usuario> orderConfiguration)
         {
             orderConfiguration.HasKey(o => o.Id);
-            orderConfiguration.OwnsOne(o => o.SenhaUsuario);
         }
     }
 }

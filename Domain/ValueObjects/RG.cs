@@ -38,15 +38,6 @@ namespace AmandaStore.Domain.ValueObjects
         /// <summary>
         /// Exibe data formatada na saída do método
         /// </summary>
-        public string GetDataDeEmissao
-        {
-            get
-            {
-                if (this.DataDeEmissao != null)
-                    return string.Format("{0:d}", this.DataDeEmissao);
-
-                return "Não Informado";
-            }
-        }
+        
     }
 }

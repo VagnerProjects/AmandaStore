@@ -11,15 +11,13 @@ namespace AmandaStore.Domain.Base
         public DateTime DataDeCadastro { get; set; }
         public DateTime DataDeAlteracao { get; set; }
         public bool Lixeira { get; set; }
-        public string EntityGuid { get; set; }
 
         public BaseModel()
         {
             DataDeCadastro = HorarioBrasilia.Get();
             DataDeAlteracao = HorarioBrasilia.Get();
-            EntityGuid = Guid.NewGuid().ToString();
         }
 
-        public void EnviarParLixeira() => Lixeira = true;
+        public void EnviarParLixeira() => Lixeira = false;
     }
 }

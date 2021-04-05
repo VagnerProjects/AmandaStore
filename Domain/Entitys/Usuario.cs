@@ -14,20 +14,18 @@ namespace AmandaStore.Domain.Entitys
         public DateTime? DataNascimento { get; set; }
         public int TipoUsuario { get; set; }
         public string EmailUsuario { get; set; }
-        public Senha SenhaUsuario { get; set; }
         public string Telefone { get; set; }
         public string Celular { get; set; }
 
         public Usuario() { }
-        public Usuario(string nome, int idade, string cpf, DateTime? dataNascimento, int tipoUsuario, string emailUsuario,
-                       Senha senhaUsuario, string telefone, string celular)
+        public Usuario(string nome, int idade, DateTime? dataNascimento, int tipoUsuario, 
+                       string emailUsuario,string telefone, string celular)
         {
             Nome = nome;
             Idade = idade;
             DataNascimento = dataNascimento;
             TipoUsuario = tipoUsuario;
             EmailUsuario = emailUsuario;
-            SenhaUsuario = senhaUsuario;
             Telefone = telefone;
             Celular = celular;
             

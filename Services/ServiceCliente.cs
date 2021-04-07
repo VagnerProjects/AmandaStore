@@ -34,7 +34,7 @@ namespace AmandaStore.Services
         {
             clienteModel.Id = Guid.NewGuid();
 
-            _serviceIdentidade.EnviarIdentidade(new UsuarioRegistro(clienteModel.Id, clienteModel.Nome,
+            var result = await _serviceIdentidade.EnviarIdentidade(new UsuarioRegistro(clienteModel.Id, clienteModel.Nome,
              clienteModel.CPF, clienteModel.TipoCliente, clienteModel.Email, clienteModel.Senha));
          
             var montarUsuario = UsuarioFactory.CriarUsuario(clienteModel);
@@ -47,6 +47,8 @@ namespace AmandaStore.Services
                                       clienteModel.RgOrgaoEmissor, clienteModel.RgPaisEmissor, clienteModel.RgEmissao),
                                        (int)(TipoCliente)Enum.Parse(typeof(TipoCliente), clienteModel.TipoCliente), new Endereco(clienteModel.Logradouro, clienteModel.Complemento, 
                                       clienteModel.Numero, clienteModel.Cep, clienteModel.Bairro, clienteModel.Cidade, clienteModel.Estado));
+
+            cliente.Id = clienteModel.Id;
 
             _repositoryCliente.AdicionarCliente(cliente);
             return await Task.FromResult(new ServerStatus() { Mensagem = "Cliente cadastrado com sucesso!", Status = 0 });

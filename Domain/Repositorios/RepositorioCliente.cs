@@ -1,5 +1,6 @@
 ﻿using AmandaStore.Domain.Entitys;
 using AmandaStore.Domain.Repositorios.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace AmandaStore.Domain.Repositorios
         {
             Adicionar(cliente);
         }
+
+        
     }
 }

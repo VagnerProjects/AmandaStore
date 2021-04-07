@@ -27,9 +27,5 @@
     <PackageReference Include="Utils.Security.JWT" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Domain\DTOs\" />
-  </ItemGroup>
-
 
 </Project>

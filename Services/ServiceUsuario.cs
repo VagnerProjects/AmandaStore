@@ -35,6 +35,8 @@ namespace AmandaStore.Services
                 var usuario = new Usuario(userModel.Nome, userModel.Idade, userModel.DataNascimento, (int)(TipoUsuario)Enum.Parse(typeof(TipoUsuario), userModel.TipoUsuario), 
                     new Email(userModel.Email).Endereco, userModel.Telefone, userModel.Celular);
 
+                usuario.Id = userModel.Id;
+
                 _repositoryUsuario.AdicionarUsuario(usuario);
             }
             catch(Exception ex)

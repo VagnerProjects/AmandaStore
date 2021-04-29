@@ -15,17 +15,5 @@ namespace AmandaStore.Domain.DTOs
         public string Email { get; set; }
         public string CPF { get; set; }
 
-        public ClienteDTO() { }
-        public ClienteDTO(Guid id, string nome, string dataNascimento, string tipoUsuario,
-                          string tipoCliente, string email, string cpf)
-        {
-            Id = id;
-            Nome = nome;
-            DataNascimento = dataNascimento;
-            TipoUsuario = tipoUsuario;
-            TipoCliente = tipoCliente;
-            Email = email;
-            CPF = cpf;
-        }
     }
 }
